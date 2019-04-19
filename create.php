@@ -1,3 +1,19 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if ($_POST["name"] && $_POST["description"]) {
+        $name = $_POST["name"];
+        $description = $_POST["description"];
+        $db = new mysqli("localhost", "labuser4", "123456", "lab4_web", 8889);
+        if ($mysqli->connect_errno) {
+            exit("Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error);
+        }
+        $db->query("INSERT INTO items (name, description) VALUES ('$name', '$description');");
+        header('Location: ../admin.php');
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 
 <html>
