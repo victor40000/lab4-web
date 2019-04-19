@@ -22,6 +22,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 <div class="container">
     <div class="brand"><font color = "#ffffcc">Панель администратора</font></div>
+    <div>
+        <a href="create.php">Опубликовать статью</a>
+    </div>
     <?php
     	$db = new mysqli("localhost", "labuser4", "123456", "lab4_web", 8889);
     	if ($mysqli->connect_errno) {
